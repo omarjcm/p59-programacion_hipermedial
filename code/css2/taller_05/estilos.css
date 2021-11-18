@@ -1,0 +1,26 @@
+a {
+    display: block;
+    color:black;
+    width: 200px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid black;
+    background-color: lightblue;
+}
+
+a:hover {
+    background-color: white;
+}
+
+a:active {
+    background-color: yellowgreen;
+    color: white;
+}
+
+.anterior {
+    float: left;
+}
+
+.siguiente {
+    float: right;
+}
