@@ -1,8 +1,12 @@
-img, p {
-    float: left;
-    width: 200px;
+p {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
 }
 
-.clearFloat {
-    clear: both;
+#posicion_absoluta {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    background-color: coral;
 }
