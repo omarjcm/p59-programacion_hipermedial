@@ -1,0 +1,16 @@
+h2 {
+    font-size: 20px;
+    color: brown;
+}
+
+.clase1 {
+    border: 1px solid chartreuse;
+}
+
+.clase2 {
+    border: 1px solid tomato;
+}
+
+.clase3 {
+    border: 1px solid turquoise;
+}
