@@ -1,0 +1,31 @@
+h2 {
+    font-size: 20px;
+    color: brown;
+}
+
+.navegacion {
+}
+
+a.menu {
+    width: 200px;
+    display: block;
+    text-align: center;
+    background-color: yellow;
+    border: 1px solid black;
+    float: left;
+    margin: 5px;
+    padding: 10px;
+}
+
+a:hover {
+    background-color: lightgreen;
+}
+
+a:active {
+    background-color: black;
+    color: white;
+}
+
+.clearFloat {
+    clear: both;
+}
