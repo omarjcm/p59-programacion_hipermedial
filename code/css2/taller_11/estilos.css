@@ -1,0 +1,11 @@
+p {
+    float: left;
+    width: 250px;
+    margin: 10px;
+    padding: 10px;
+    background-color: coral;
+}
+
+.clearFloat {
+    clear: both;
+}
