@@ -1,0 +1,33 @@
+* {
+    margin: 0px;
+}
+
+.container {
+    display: grid;
+    grid-template: 150px 1fr 50px / 200px 1fr;
+    grid-template-areas: "header header" "left content" "footer footer";
+    gap: 10px;
+    height: 100vh;
+}
+
+.item {
+    border: 1px solid black;
+}
+
+.header {
+    grid-area: header;
+    background-color: lightpink;
+}
+
+.left {
+    grid-area: left;
+    background-color: lightblue;
+}
+
+.content {
+    grid-area: content;
+}
+
+.footer {
+    grid-area: footer;
+}
