@@ -1,0 +1,39 @@
+* {
+    margin: 0px;
+}
+
+.container {
+    display: grid;
+    grid-template: 150px 1fr 50px / 200px 1fr;
+    grid-template-areas: "header header" "left content" "footer footer";
+    gap: 10px;
+    height: 100vh;
+}
+
+.item {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.header {
+    grid-area: header;
+    background-color: lightpink;
+}
+
+.left {
+    grid-area: left;
+    background-color: lightblue;
+}
+
+.content {
+    grid-area: content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.footer {
+    grid-area: footer;
+}
