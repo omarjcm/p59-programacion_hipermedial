@@ -1,0 +1,31 @@
+* {
+    margin: 0px;
+}
+
+.container {
+    display: grid;
+    grid-template: 150px 1fr 50px / 1fr;
+    grid-template-areas: "header" "content" "footer";
+    gap: 10px;
+    height: 100vh;
+}
+
+.item {
+    border: 1px solid black;
+}
+
+.header {
+    grid-area: header;
+    background-color: darkgreen;
+    color: white;
+}
+
+.content {
+    grid-area: content;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: darkgreen;
+    color: white;
+}
