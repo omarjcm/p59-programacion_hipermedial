@@ -18,6 +18,11 @@
     grid-area: header;
     background-color: darkgreen;
     color: white;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .content {
@@ -28,4 +33,9 @@
     grid-area: footer;
     background-color: darkgreen;
     color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
