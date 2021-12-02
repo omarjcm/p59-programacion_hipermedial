@@ -1,12 +1,13 @@
 * {
     margin: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .container {
     display: grid;
     grid-template: 150px 1fr 50px / 1fr;
     grid-template-areas: "header" "content" "footer";
-    gap: 10px;
+    gap: 5px;
     height: 100vh;
 }
 
@@ -16,7 +17,7 @@
 
 .header {
     grid-area: header;
-    background-color: darkgreen;
+    background-color: darkblue;
     color: white;
     
     display: flex;
@@ -27,15 +28,53 @@
 
 .content {
     grid-area: content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer {
     grid-area: footer;
-    background-color: darkgreen;
+    background-color: darkblue;
     color: white;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.formulario {
+    background-color: whitesmoke;
+    list-style-type: none;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 600px;
+}
+
+.formulario-fila {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5em;
+}
+
+.formulario-fila > label {
+    padding: .5em 1em .5em 0;
+    flex: 1;
+    text-align: right;
+}
+
+.formulario-fila > input {
+    flex: 2;
+}
+
+.formulario-fila > input , .formulario-fila > button {
+    padding: .5em;
+}
+
+.formulario-fila > button {
+    background: gray;
+    color: white;
+    border: 0px;
 }
