@@ -23,3 +23,20 @@ def obtener_numeros_ordenados(response):
         'mensaje':'Numeros enteros ordenados exitosamente.'
     }
     return HttpResponse( json.dumps( datos ), content_type='application/json' )
+
+def persona(response):
+    nombre = response.GET['nombre']
+    edad = response.GET['edad']
+    edad = int( edad )
+    if edad < 12:
+        mensaje = 'Lo siento {}, no te encuentras autorizado para estar aqui.'.format(nombre)
+    else:
+        mensaje = '{}, bienvenido.'.format(nombre)
+    return HttpResponse( mensaje )
+
+def persona2(response, nombre, edad):
+    if edad < 12:
+        mensaje = 'Lo siento {}, no te encuentras autorizado para estar aqui.'.format(nombre)
+    else:
+        mensaje = '{}, bienvenido.'.format(nombre)
+    return HttpResponse( mensaje )
