@@ -14,11 +14,8 @@ def obtener_numeros(response):
     return HttpResponse( str(numeros) )
 
 def obtener_numeros_ordenados(response):
-    lista = []
-    numeros = response.GET['numeros'].split(',')
-    for numero in numeros:
-        lista.append( int(numero) )
-    numeros_ordenados = sorted( lista )
+    numeros = [ int(i) for i in response.GET['numeros'].split(',') ] 
+    numeros_ordenados = sorted( numeros )
     
     datos = {
         'numeros':numeros_ordenados,
