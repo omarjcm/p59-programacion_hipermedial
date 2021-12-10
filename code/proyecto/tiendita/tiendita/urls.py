@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from tiendita import views as locals_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('hello-world/', locals_views.hello_world),
+    path('hola/', locals_views.hola),
+    path('obtener-numeros/', locals_views.obtener_numeros),
+    path('obtener-numeros-ordenados/', locals_views.obtener_numeros_ordenados)
 ]
