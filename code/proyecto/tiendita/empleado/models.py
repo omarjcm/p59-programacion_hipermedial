@@ -8,7 +8,7 @@ class Empleado(models.Model):
     url = models.URLField(max_length=300, blank=True)
     biografia = models.TextField(blank=True)
     numero_telefono = CharField(max_length=20, blank=True)
-    picture = models.ImageField(
+    imagen = models.ImageField(
         upload_to='empleado/imagenes',
         blank=True,
         null=True
