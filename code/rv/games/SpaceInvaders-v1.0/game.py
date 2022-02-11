@@ -2,6 +2,7 @@ import pygame
 from alien import Alien
 from generator import Generator
 from starship import Starship
+from ray import Ray
 
 '''
 Basado en: https://github.com/janjilecek/pygame-invaders/blob/master/main.py
@@ -10,6 +11,7 @@ Basado en: https://github.com/janjilecek/pygame-invaders/blob/master/main.py
 class Game:
     screen = None 
     aliens = []
+    rays = []
 
     def __init__(self, width, height):
         pygame.init()
@@ -24,9 +26,18 @@ class Game:
         generator = Generator(self)
 
         while not done:
+            pressed = pygame.key.get_pressed()
+
+            if pressed[pygame.K_LEFT]:
+                starship.x -= 2 if starship.x > 20 else 0
+            elif pressed[pygame.K_RIGHT]:
+                starship.x += 2 if starship.x < (self.width - 20) else 0
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     done = True
+                if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                    self.rays.append( Ray(self, starship.x, starship.y) )
 
             pygame.display.flip()
             self.clock.tick(60)
@@ -34,6 +45,9 @@ class Game:
 
             for alien in self.aliens:
                 alien.draw()
+            
+            for ray in self.rays:
+                ray.draw()
             
             starship.draw()
 
