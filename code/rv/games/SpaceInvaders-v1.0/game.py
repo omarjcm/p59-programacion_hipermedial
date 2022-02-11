@@ -1,4 +1,9 @@
 import pygame
+from alien import Alien
+
+'''
+Basado en: https://github.com/janjilecek/pygame-invaders/blob/master/main.py
+'''
 
 class Game:
     screen = None 
@@ -21,6 +26,11 @@ class Game:
             pygame.display.flip()
             self.clock.tick(60)
             self.screen.fill( (0,0,0) )
+
+            alien = Alien(self, 30, 30)
+            alien.draw()
+
+
             
 
 if __name__ == '__main__':
