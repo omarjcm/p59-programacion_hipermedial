@@ -1,5 +1,7 @@
 import pygame
 from alien import Alien
+from generator import Generator
+from starship import Starship
 
 '''
 Basado en: https://github.com/janjilecek/pygame-invaders/blob/master/main.py
@@ -7,7 +9,7 @@ Basado en: https://github.com/janjilecek/pygame-invaders/blob/master/main.py
 
 class Game:
     screen = None 
-    alliens = []
+    aliens = []
 
     def __init__(self, width, height):
         pygame.init()
@@ -18,6 +20,9 @@ class Game:
         self.clock = pygame.time.Clock()
         done = False
 
+        starship = Starship(self, self.width/2, self.height-20)
+        generator = Generator(self)
+
         while not done:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -27,11 +32,10 @@ class Game:
             self.clock.tick(60)
             self.screen.fill( (0,0,0) )
 
-            alien = Alien(self, 30, 30)
-            alien.draw()
-
-
+            for alien in self.aliens:
+                alien.draw()
             
+            starship.draw()
 
 if __name__ == '__main__':
     game = Game(600, 400)
