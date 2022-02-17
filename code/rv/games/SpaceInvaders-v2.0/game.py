@@ -1,0 +1,50 @@
+import pygame as pg
+from invader import *
+from turtle import window_width, window_height
+
+class Game:
+    window_width
+    window_height
+
+    rows = 3
+    cols = 10
+
+    def __init__(self, width, height):
+        pg.init()
+
+        self.window_width = width
+        self.window_height = height
+
+        self.screen = pg.display.set_mode( (self.window_width, self.window_height) )
+        pg.display.set_caption( 'Space Invaders' )
+
+        self.background = pg.image.load('./images/background.jpg')
+
+        self.invaders_group = pg.sprite.Group()
+        self.create_invaders()
+
+        self.game_over = True
+        while self.game_over:
+            self.screen.blit( self.background, (0,0) )
+
+            self.invaders_group.update()
+
+            self.invaders_group.draw( self.screen )
+
+            for event in pg.event.get():
+                if event.type == pg.QUIT:
+                    self.game_over = False
+
+                pg.display.update()
+
+        pg.quit()
+
+    def create_invaders(self):
+        for row in range(self.rows):
+            for col in range(self.cols):
+                invader = Invader(self, 100 + col * 65, 80 + row * 50)
+                self.invaders_group.add( invader ) 
+
+
+if __name__ == '__main__':
+    game = Game(800, 600)
