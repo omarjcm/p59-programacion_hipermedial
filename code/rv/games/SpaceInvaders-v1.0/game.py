@@ -12,6 +12,7 @@ class Game:
     screen = None 
     aliens = []
     rays = []
+    lost = False
 
     def __init__(self, width, height):
         pygame.init()
@@ -26,6 +27,9 @@ class Game:
         generator = Generator(self)
 
         while not done:
+            if len(self.aliens) == 0:
+                self.displayText( 'VICTORIA ALCANZADA' )
+
             pressed = pygame.key.get_pressed()
 
             if pressed[pygame.K_LEFT]:
@@ -46,11 +50,22 @@ class Game:
             for alien in self.aliens:
                 alien.draw()
                 alien.checkCollision(self)
+
+                if alien.y > self.height-20:
+                    self.lost = True
+                    self.displayText( 'PERDISTE!' )
             
             for ray in self.rays:
                 ray.draw()
             
-            starship.draw()
+            if not self.lost:
+                starship.draw()
+
+    def displayText(self, texto):
+        pygame.font.init()
+        font = pygame.font.SysFont('Arial', 50)
+        textSurface = font.render(texto, False, (44, 0, 63))
+        self.screen.blit( textSurface, (110, 160) )
 
 if __name__ == '__main__':
     game = Game(600, 400)
