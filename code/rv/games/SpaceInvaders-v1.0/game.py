@@ -45,6 +45,7 @@ class Game:
 
             for alien in self.aliens:
                 alien.draw()
+                alien.checkCollision(self)
             
             for ray in self.rays:
                 ray.draw()
