@@ -11,6 +11,8 @@ Material del Curso de Programación Hipermedial
 
 ## Proyecto 
 
+Trabajos realizados utilizando el framework de Django.
+
 ## RV - Realidad Virtual
 
 ### Características
