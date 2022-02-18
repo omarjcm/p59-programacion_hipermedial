@@ -30,6 +30,8 @@ class Game:
         self.player = Player(self, int(self.window_width/2), self.window_height - 100)
         self.players_group.add( self.player )
 
+        self.player_bullets = pg.sprite.Group()
+
         self.game_over = True
         while self.game_over:
             self.screen.blit( self.background, (0,0) )
@@ -37,8 +39,12 @@ class Game:
             self.invaders_group.update()
             self.players_group.update()
 
+            self.player_bullets.update()
+
             self.invaders_group.draw( self.screen )
             self.players_group.draw( self.screen )
+
+            self.player_bullets.draw( self.screen )
 
             for event in pg.event.get():
                 if event.type == pg.QUIT:
