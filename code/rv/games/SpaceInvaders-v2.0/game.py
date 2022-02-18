@@ -13,6 +13,8 @@ class Game:
     def __init__(self, width, height):
         pg.init()
 
+        self.clock = pg.time.Clock()
+
         self.window_width = width
         self.window_height = height
 
@@ -42,7 +44,8 @@ class Game:
                 if event.type == pg.QUIT:
                     self.game_over = False
 
-                pg.display.update()
+            pg.display.update()
+            self.clock.tick(60)
 
         pg.quit()
 
