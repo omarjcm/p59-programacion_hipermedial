@@ -1,5 +1,6 @@
 import pygame as pg
 from invader import *
+from player import *
 from turtle import window_width, window_height
 
 class Game:
@@ -23,13 +24,19 @@ class Game:
         self.invaders_group = pg.sprite.Group()
         self.create_invaders()
 
+        self.players_group = pg.sprite.Group()
+        self.player = Player(self, int(self.window_width/2), self.window_height - 100)
+        self.players_group.add( self.player )
+
         self.game_over = True
         while self.game_over:
             self.screen.blit( self.background, (0,0) )
 
             self.invaders_group.update()
+            self.players_group.update()
 
             self.invaders_group.draw( self.screen )
+            self.players_group.draw( self.screen )
 
             for event in pg.event.get():
                 if event.type == pg.QUIT:
